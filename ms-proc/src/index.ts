@@ -16,12 +16,12 @@ let data
           fs.mkdirSync('../uploads')
         }
       })
-      const generated = new Date().toISOString()
+      const filename = new Date().toISOString()
       await sharp(data)
         .resize(500)
         .jpeg({ quality: 85 })
-        .toFile('../uploads/' + `${generated}.jpeg`)
-      data = `http://localhost:4000/${generated}.jpeg`
+        .toFile('../uploads/' + `${filename}.jpeg`)
+      data = `http://localhost:4000/${filename}.jpeg`
       channel.sendToQueue(msg.properties.replyTo, Buffer.from(JSON.stringify(data)), {
         correlationId: msg.properties.correlationId
       })
