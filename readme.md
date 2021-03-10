@@ -1,6 +1,10 @@
 ## MIMAGE ♟
 
+### Resume
+
 What was intended in this example was to upload an image to the api so that it can send the image buffer to the microservice in order to compress and resize the image. Finally, the link in the json response is given, so that we can see the image already compressed and resized.
+
+### Brief Explanation
 
 For this purpose, the multer dependency was used, which we used the memoryStorage so that later we could send only and exclusively the image buffer to the RabbitMQ queue.
 
